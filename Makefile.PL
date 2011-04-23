@@ -9,6 +9,7 @@ requires 'strictures';
 requires 'true';
 requires 'Try::Tiny';
 requires 'Sub::Exporter';
+requires 'Devel::PartialDump';
 
 test_requires  'Test::Most';
 
