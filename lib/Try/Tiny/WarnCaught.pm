@@ -3,6 +3,7 @@ our $VERSION = 0.01;
 use strictures;
 use true;
 use Try::Tiny ();
+use Devel::PartialDump 'warn';
 use Sub::Exporter -setup => {
     exports => [qw(catch)],
     groups => {
@@ -13,7 +14,7 @@ use Sub::Exporter -setup => {
 sub catch (&;@) {
     my $cb = shift;
     Try::Tiny::catch {
-        warn "Caught exception: $_";
+        warn "Caught exception: ", $_;
         $cb->(@_);
     };
 }
